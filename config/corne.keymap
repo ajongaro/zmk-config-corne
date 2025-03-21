@@ -74,14 +74,13 @@
         compatible = "zmk,combos";
 
         Copy {
-            bindings = <&kp LG(C)>;
+            bindings = <&kp K_COPY>;
             key-positions = <14 15>;
             timeout-ms = <0>;
-            layers = <0>;
         };
 
         Paste {
-            bindings = <&kp LG(V)>;
+            bindings = <&kp LG(K_PASTE)>;
             key-positions = <15 16>;
             timeout-ms = <0>;
             layers = <0>;
