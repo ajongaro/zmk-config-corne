@@ -68,22 +68,113 @@
                 <&macro_release>,
                 <&kp LCTRL>;
         };
+
+        copy: copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(C)>;
+            label = "COPY";
+        };
+
+        paste: paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(P)>;
+            label = "PASTE";
+        };
+
+        span_a: span_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&span_a>;
+            label = "SPAN_A";
+        };
+
+        span_e: span_e {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&span_e>;
+            label = "SPAN_E";
+        };
+
+        span_i: span_i {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&span_i>;
+            label = "SPAN_I";
+        };
+
+        span_o: span_o {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&span_o>;
+            label = "SPAN_O";
+        };
+
+        span_u: span_u {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&span_u>;
+            label = "SPAN_U";
+        };
+
+        span_n: span_n {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&span_n>;
+            label = "SPAN_N";
+        };
     };
 
     combos {
         compatible = "zmk,combos";
 
         Copy {
-            bindings = <&kp K_COPY>;
+            bindings = <&copy>;
             key-positions = <14 15>;
             timeout-ms = <0>;
         };
 
         Paste {
-            bindings = <&kp LG(K_PASTE)>;
+            bindings = <&paste>;
             key-positions = <15 16>;
             timeout-ms = <0>;
             layers = <0>;
+        };
+
+        capword {
+            bindings = <&caps_word>;
+            key-positions = <20 21>;
+        };
+
+        span_a {
+            bindings = <&span_a>;
+            key-positions = <13 22>;
+        };
+
+        span_e {
+            bindings = <&span_e>;
+            key-positions = <22 3>;
+        };
+
+        span_i {
+            bindings = <&span_i>;
+            key-positions = <22 8>;
+        };
+
+        span_u {
+            bindings = <&span_u>;
+            key-positions = <7 22>;
+        };
+
+        span_o {
+            bindings = <&span_o>;
+            key-positions = <9 22>;
+        };
+
+        span_n {
+            bindings = <&span_n>;
+            key-positions = <22 30>;
         };
     };
 
@@ -102,9 +193,9 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB         &kp Q               &kp W           &kp E               &kp R  &kp T                   &kp Y      &kp U      &kp I                    &kp O              &kp P                   &kp BACKSPACE
-&kp CAPS        &kp A               &kp S           &kp D               &kp F  &kp G                   &kp H      &kp J      &kp K                    &kp L              &kp SEMI                &mt CAPS SQT
-&kp LEFT_SHIFT  &mt LEFT_CONTROL Z  &mt LEFT_ALT X  &mt LEFT_COMMAND C  &kp V  &kp B                   &kp N      &kp M      &mt RIGHT_COMMAND COMMA  &mt RIGHT_ALT DOT  &mt RIGHT_CONTROL FSLH  &mt RSHFT ENTER
+&kp TAB         &kp Q               &kp W           &kp E               &kp R  &kp T                   &kp Y      &kp U      &kp I                    &kp O              &kp P                  &kp BACKSPACE
+&kp CAPS        &kp A               &kp S           &kp D               &kp F  &kp G                   &kp H      &kp J      &kp K                    &kp L              &kp SEMI               &mt CAPS SQT
+&kp LEFT_SHIFT  &mt LEFT_CONTROL Z  &mt LEFT_ALT X  &mt LEFT_COMMAND C  &kp V  &kp B                   &kp N      &kp M      &mt RIGHT_COMMAND COMMA  &mt RIGHT_ALT DOT  &mt LEFT_CONTROL FSLH  &mt RSHFT ENTER
                                                     &mo 4               &mo 1  &mt LEFT_SHIFT ENTER    &kp SPACE  &lt 2 TAB  &kp LG(GRAVE)
             >;
         };
