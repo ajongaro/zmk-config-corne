@@ -145,11 +145,6 @@
     combos {
         compatible = "zmk,combos";
 
-        test {
-            bindings = <&kp DLLR>;
-            key-positions = <3 15>;
-        };
-
         span_a {
             bindings = <&span_a>;
             key-positions = <13 22>;
@@ -208,6 +203,21 @@
         cut {
             bindings = <&cut>;
             key-positions = <25 26>;
+        };
+
+        left_side_window {
+            bindings = <&kp F13>;
+            key-positions = <1 2>;
+        };
+
+        maximize_window {
+            bindings = <&kp F17>;
+            key-positions = <2 3>;
+        };
+
+        right_side_window {
+            bindings = <&kp F16>;
+            key-positions = <3 4>;
         };
     };
 
