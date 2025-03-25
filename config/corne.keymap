@@ -177,12 +177,12 @@
 
         screen_shot_file {
             bindings = <&screenshot>;
-            key-positions = <13 14>;
+            key-positions = <13 25>;
         };
 
         screen_shot_copy {
             bindings = <&screenshot_copy>;
-            key-positions = <14 15>;
+            key-positions = <14 26>;
         };
 
         copy {
@@ -207,17 +207,17 @@
 
         left_side_window {
             bindings = <&kp F13>;
-            key-positions = <1 2>;
+            key-positions = <1 13>;
         };
 
         maximize_window {
             bindings = <&kp F17>;
-            key-positions = <2 3>;
+            key-positions = <3 15>;
         };
 
         right_side_window {
             bindings = <&kp F16>;
-            key-positions = <3 4>;
+            key-positions = <4 16>;
         };
     };
 
