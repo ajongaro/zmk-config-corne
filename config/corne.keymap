@@ -72,13 +72,7 @@
         copy: copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LGUI>,
-                <&macro_tap>,
-                <&kp C>,
-                <&macro_release>;
-
+            bindings = <&kp LG(C)>;
             label = "COPY";
         };
 
@@ -127,20 +121,14 @@
         paste_test: paste_test {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LGUI>,
-                <&macro_tap>,
-                <&kp V>,
-                <&macro_release>;
-
+            bindings = <&kp LG(V)>;
             label = "PASTE_TEST";
         };
 
         screenshot: screenshot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LC(LG(NUMBER_4)))>;
+            bindings = <&kp LS(LG(LA(NUMBER_4)))>;
             label = "SCREENSHOT";
         };
 
@@ -150,24 +138,17 @@
             bindings = <&kp LS(LG(NUMBER_4))>;
             label = "SCREENSHOT_COPY";
         };
+
+        minimize: minimize {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(M)>;
+            label = "MINIMIZE";
+        };
     };
 
     combos {
         compatible = "zmk,combos";
-
-        Copy {
-            bindings = <&copy>;
-            key-positions = <14 26>;
-            timeout-ms = <0>;
-            layers = <0>;
-        };
-
-        Paste {
-            bindings = <&paste_test>;
-            key-positions = <15 27>;
-            timeout-ms = <0>;
-            layers = <0>;
-        };
 
         test {
             bindings = <&kp DLLR>;
@@ -212,6 +193,26 @@
         screen_shot_copy {
             bindings = <&screenshot_copy>;
             key-positions = <14 15>;
+        };
+
+        copy {
+            bindings = <&copy>;
+            key-positions = <26 27>;
+        };
+
+        paste {
+            bindings = <&paste_test>;
+            key-positions = <27 28>;
+        };
+
+        browser_tab {
+            bindings = <&browsertab>;
+            key-positions = <15 16>;
+        };
+
+        minimize {
+            bindings = <&minimize>;
+            key-positions = <13 14 15 16>;
         };
     };
 
@@ -274,10 +275,10 @@
         ADJ {
             display-name = "System";
             bindings = <
-&trans  &kp F1        &kp F2        &kp F3            &kp F4      &kp F5            &kp F6          &kp F7          &kp F8        &kp F9           &kp F10      &trans
-&trans  &none         &kp K_PREV    &kp K_PLAY_PAUSE  &kp K_NEXT  &studio_unlock    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans       &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_CLR  &bt BT_CLR_ALL    &trans          &kp F13         &kp F17       &kp F16          &bootloader  &trans
-                                    &trans            &trans      &trans            &trans          &trans          &trans
+&trans  &kp F1        &kp F2          &kp F3        &kp F4      &kp F5            &kp F6          &kp F7          &kp F8        &kp F9           &kp F10      &trans
+&trans  &none         &kp C_PREVIOUS  &kp C_PLAY    &kp C_NEXT  &studio_unlock    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans       &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL    &trans          &kp F13         &kp F17       &kp F16          &bootloader  &trans
+                                      &trans        &trans      &trans            &trans          &trans          &trans
             >;
         };
 
