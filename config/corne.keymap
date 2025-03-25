@@ -72,57 +72,69 @@
         copy: copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(C)>;
-            label = "COPY";
-        };
+            bindings =
+                <&macro_press>,
+                <&kp LGUI>,
+                <&macro_tap>,
+                <&kp C>,
+                <&macro_release>;
 
-        paste: paste {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(P)>;
-            label = "PASTE";
+            label = "COPY";
         };
 
         span_a: span_a {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&span_a>;
+            bindings = <&kp LA(E) &kp A>;
             label = "SPAN_A";
         };
 
         span_e: span_e {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&span_e>;
+            bindings = <&kp LA(E) &kp E>;
             label = "SPAN_E";
         };
 
         span_i: span_i {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&span_i>;
+            bindings = <&kp LA(E) &kp I>;
             label = "SPAN_I";
         };
 
         span_o: span_o {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&span_o>;
+            bindings = <&kp LA(E) &kp O>;
             label = "SPAN_O";
         };
 
         span_u: span_u {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&span_u>;
+            bindings = <&kp LA(E) &kp U>;
             label = "SPAN_U";
         };
 
         span_n: span_n {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&span_n>;
+            bindings = <&kp LA(N) &kp N>;
             label = "SPAN_N";
+        };
+
+        paste_test: paste_test {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI>,
+                <&macro_tap>,
+                <&kp V>,
+                <&macro_release>;
+
+            label = "PASTE_TEST";
         };
     };
 
@@ -137,16 +149,25 @@
         };
 
         Paste {
-            bindings = <&paste>;
+            bindings = <&paste_test>;
             key-positions = <15 16>;
             timeout-ms = <0>;
             layers = <0>;
         };
 
-        combo_test {
-            bindings = <&kp PIPE>;
-            key-positions = <14 16>;
-            layers = <0 1 2 3 4>;
+        test {
+            bindings = <&kp DLLR>;
+            key-positions = <3 15>;
+        };
+
+        span_a {
+            bindings = <&span_a>;
+            key-positions = <13 22>;
+        };
+
+        span_n {
+            bindings = <&span_n>;
+            key-positions = <30 22>;
         };
     };
 
@@ -168,7 +189,7 @@
 &kp TAB         &kp Q               &kp W           &kp E               &kp R  &kp T                   &kp Y      &kp U      &kp I                    &kp O              &kp P                  &kp BACKSPACE
 &kp CAPS        &kp A               &kp S           &kp D               &kp F  &kp G                   &kp H      &kp J      &kp K                    &kp L              &kp SEMI               &mt CAPS SQT
 &kp LEFT_SHIFT  &hm LEFT_CONTROL Z  &hm LEFT_ALT X  &hm LEFT_COMMAND C  &kp V  &kp B                   &kp N      &kp M      &hm RIGHT_COMMAND COMMA  &hm RIGHT_ALT DOT  &hm LEFT_CONTROL FSLH  &mt RSHFT ENTER
-                                                    &mo 4               &mo 1  &mt LEFT_SHIFT ENTER    &kp SPACE  &lt 2 TAB  &kp LG(GRAVE)
+                                                    &lt 4 F20           &mo 1  &mt LEFT_SHIFT ENTER    &kp SPACE  &lt 2 TAB  &kp LG(GRAVE)
             >;
         };
 
