@@ -57,18 +57,6 @@
     };
 
     macros {
-        browsertab: browsertab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp TAB>,
-                <&macro_release>,
-                <&kp LCTRL>;
-        };
-
         copy: copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -145,6 +133,13 @@
             bindings = <&kp LG(M)>;
             label = "MINIMIZE";
         };
+
+        cut: cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(X)>;
+            label = "CUT";
+        };
     };
 
     combos {
@@ -205,14 +200,14 @@
             key-positions = <27 28>;
         };
 
-        browser_tab {
-            bindings = <&browsertab>;
-            key-positions = <15 16>;
-        };
-
         minimize {
             bindings = <&minimize>;
             key-positions = <13 14 15 16>;
+        };
+
+        cut {
+            bindings = <&cut>;
+            key-positions = <25 26>;
         };
     };
 
